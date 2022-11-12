@@ -5,7 +5,12 @@ class GaussJordanRow():
         self.data=arr
     
     def write_row(self,row,new_row):
-        row=new_row
+        row.data=new_row.data
+
+        '''
+        Esta funciona de modo que row se iguale a new_row de modo que al ser llamada
+        
+        '''
 
     def __lshift__(self,other):
         self.write_row(other,self)
