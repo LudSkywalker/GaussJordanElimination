@@ -16,8 +16,8 @@ class GaussJordanRow():
         
     def __mul__(self,other):
         product=[]
-        for i in self:
-            product.append(self.data[i]*other)
+        for i in self.data:
+            product.append(i*other)
         return GaussJordanRow(product)
 
 class GaussJordanMatrix():
