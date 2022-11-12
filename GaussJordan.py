@@ -23,7 +23,15 @@ class GaussJordanMatrix():
         for row in arr:
             self.rows.append(GaussJordanRow(row))
 
+    def show_matrix(self):
+        for row in self.rows:
+            for col in row.data:
+                print(str(col)+",",end="")
+            print()
         
+
+mat=GaussJordanMatrix([[1,2,3],[4,5,6],[7,8,9]])
+mat.show_matrix()
 
 
 
