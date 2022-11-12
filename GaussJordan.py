@@ -24,6 +24,18 @@ class GaussJordanRow():
         for col in self.data:
             print(str(col)+",",end="")
         print("")
+    
+    def __add__(self, other):
+        new_row = []
+        row_actually = self.data
+        if len(row_actually) == len(other):
+            for i in range(len(row_actually)):
+                new_row.append(row_actually[i] + other[i])
+            return  GaussJordanRow(new_row)
+        else:
+            print("Los elementos son distintos")
+        
+
 
 class GaussJordanMatrix():
 
