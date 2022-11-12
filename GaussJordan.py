@@ -20,6 +20,11 @@ class GaussJordanRow():
             product.append(i*other)
         return GaussJordanRow(product)
 
+    def show_row(self):
+        for col in self.data:
+            print(str(col)+",",end="")
+        print("")
+
 class GaussJordanMatrix():
 
     rows=[]
@@ -35,7 +40,9 @@ class GaussJordanMatrix():
         
 
 mat=GaussJordanMatrix([[1,2,3],[4,5,6],[7,8,9]])
-mat.show_matrix()
+newrow=mat.rows[0]*5
+newrow.show_row()
+# mat.show_matrix()
 
 
 
