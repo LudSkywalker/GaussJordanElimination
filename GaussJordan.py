@@ -28,7 +28,8 @@ class GaussJordanRow():
     def __add__(self, other):
         new_row = []
         row_actually = self.data
-        if len(row_actually) == len(other):
+        row_to_plus = self.other
+        if len(row_actually) == len(row_to_plus):
             for i in range(len(row_actually)):
                 new_row.append(row_actually[i] + other[i])
             return  GaussJordanRow(new_row)
