@@ -1,12 +1,7 @@
 class GaussJordanRow():
-
-    data=[]
-
-    def __init__(self,arr):
-        self.data=arr
     
     def write_row(self,row,new_row):
-        pass
+        row=new_row
 
     def __lshift__(self,other):
         self.write_row(other,self)
@@ -42,8 +37,9 @@ class GaussJordanMatrix():
 
     rows=[]
     def __init__(self, arr):
-        for row in arr:
-            self.rows.append(GaussJordanRow(row))
+
+        for i in range(len(arr)):
+            self.rows.append(GaussJordanRow)
 
     def show_matrix(self):
         for row in self.rows:
