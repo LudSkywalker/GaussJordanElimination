@@ -55,8 +55,8 @@ class GaussJordanMatrix():
 mat=GaussJordanMatrix([[1,2,3],[4,5,6],[7,8,9]])
 newrow=mat.rows[0]*5
 newrow.show_row()
-newrow=mat.rows[0]+mat.rows[1]
-newrow.show_row()
+# newrow=mat.rows[0]+mat.rows[1]
+# newrow.show_row()
 # mat.show_matrix()
 
 
