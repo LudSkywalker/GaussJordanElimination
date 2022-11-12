@@ -15,6 +15,12 @@ class GaussJordanRow():
         self.write_row(self,other)
         
     def __mul__(self,other):
+        '''
+        La función __mul__ multiplica un renglón de la matriz por una constante
+        >>> r=GaussJordanRow([1,2,3])
+        >>> r*3
+        [3,6,9]
+        '''
         product=[]
         for i in self.data:
             product.append(i*other)
