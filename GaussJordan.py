@@ -50,8 +50,16 @@ class GaussJordanRow():
         """ 
         >>> m1 = GaussJordanRow([1,2,3])
         >>> m2 = GaussJordanRow([2,3,1])
-        >>> result = m1 + m2
-        [3,5,4]
+        >>> m3 = GaussJordanRow([3,4,5])
+        >>> result1 = m1 + m2
+        >>> result1.data
+        [3, 5, 4]
+        >>> result2 = m2 + m3
+        >>> result2.data
+        [5, 7, 6]
+        >>> result3 = m1 + m3
+        >>> result3.data
+        [4, 6, 8]
         """
         new_row = []
         row_actually = self.data
