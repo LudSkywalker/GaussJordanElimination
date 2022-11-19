@@ -25,12 +25,18 @@ class GaussJordanRow():
         print("")
     
     def __add__(self, other):
+        """ 
+        >>> m1 = GaussJordanRow([1,2,3])
+        >>> m2 = GaussJordanRow([2,3,1])
+        >>> result = m1 + m2
+        [3,5,4]
+        """
         new_row = []
         row_actually = self.data
-        row_to_plus = self.other
+        row_to_plus = other.data
         if len(row_actually) == len(row_to_plus):
             for i in range(len(row_actually)):
-                new_row.append(row_actually[i] + other[i])
+                new_row.append(row_actually[i] + row_to_plus[i])
             return  GaussJordanRow(new_row)
         else:
             print("Los elementos son distintos")
