@@ -33,8 +33,8 @@ class GaussJordanRow():
         '''
         La función __mul__ multiplica un renglón de la matriz por una constante
         >>> r=GaussJordanRow([1,2,3])
-        >>> r*3
-        [3,6,9]
+        >>> (r*3).data
+        [3, 6, 9]
         '''
         product = []
         for i in self.data:
@@ -99,7 +99,6 @@ class GaussJordanMatrix():
         # [{'name':'entrada', 'data':[[0,2,1],[1,1,0]]},{'name':'paso 1', 'data':[[1,1,0],[0,2,1]]},{'name':'paso 2', 'data':[[1,1,0],[0,1,0.5]]},{'name':'paso 3', 'data':[[1,0,-0.5],[0,1,0.5]]}]
 
         # '''
-        result=GaussJordanRow(self.rows)
         for i in range(len(self.rows)):
             self.rows[i].data.append(arr[i])
 
