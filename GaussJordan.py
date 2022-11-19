@@ -5,7 +5,13 @@ class GaussJordanRow():
         self.data=arr
     
     def write_row(self,row,new_row):
-        row=new_row
+        row.data=new_row.data
+
+        '''
+        Esta funciona de modo que row se iguale a new_row de modo que al ser llamada
+        la guarde como el cambio relizado en la filas
+        >>>
+        '''
 
     def __lshift__(self,other):
         self.write_row(other,self)
@@ -13,6 +19,7 @@ class GaussJordanRow():
     def __rshift__(self,other):
         self.write_row(self,other)
         
+
     def __mul__(self,other):
         '''
         La función __mul__ multiplica un renglón de la matriz por una constante
@@ -77,11 +84,46 @@ class GaussJordanMatrix():
         pass
         
         
+    def exchange(self,f1,f2):
+        '''
+        Esta funciona con el operador mágico Bitwise Right Shift permitiendo el cambio de filas
+        >>> mat=GaussJordanMatrix([[1,2,3],[4,5,6],[7,8,9]])
+        >>> mat.exchange(1,2)
+        >>> mat.rows[1]
+        [7, 8, 9]
+        
+        >>> mat.rows[2]
+        [4, 5, 6]
 
-mat=GaussJordanMatrix([[1,2,3],[4,5,6],[7,8,9]])
-# newrow=mat.rows[0]*5
-# newrow.show_row()
+        >>> mat=GaussJordanMatrix([[1,2,3],[4,5,6],[7,8,9]])
+        >>> mat.exchange(0,2)
+        >>> mat.rows[0]
+        [7, 8, 9]
+        
+        >>> mat.rows[2]
+        [1, 2, 3]
 
+        >>> mat=GaussJordanMatrix([[1,2,3],[4,5,6],[7,8,9]])
+        >>> mat.exchange(0,1)
+        >>> mat.rows[0]
+        [4, 5, 6]
+        
+        >>> mat.rows[1]
+        [1, 2, 3]
+
+
+        '''
+        row_1 = self.rows[f1]
+        row_2 = self.rows[f2]
+        row_temp = []
+        
+
+        
+
+
+#mat=GaussJordanMatrix([[1,2,3],[4,5,6],[7,8,9]])
+#newrow=mat.rows[0]*5
+#newrow.show_row()
 # newrow=mat.rows[0]+mat.rows[1]
 # newrow.show_row()
 # mat.rows[0] << mat.rows[0]*5
